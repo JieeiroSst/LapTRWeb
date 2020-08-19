@@ -1,0 +1,29 @@
+{{define "List"}}
+  {{ template "Header" }}
+    <h2 class="col"> Manager course </h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">CourseId</th>
+        <th scope="col">CourseName</th>
+        <th scope="col">Department</th>
+        <th scope="col">Edit</th>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        <td scope="row">{{ .CourseId }}</td>
+        <td> {{ .CourseName }} </td>
+        <td>{{ .Department }} </td>
+        <td>
+          <a href="/admin/course/show?id={{ .CourseId }}">View</a>
+          <a href="/admin/course/edit?id={{ .CourseId }}">Edit</a>
+          <a href="/admin/course/delete?id={{ .CourseId }}">Delete</a>
+        </td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{end}}

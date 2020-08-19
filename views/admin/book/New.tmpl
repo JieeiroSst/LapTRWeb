@@ -1,0 +1,41 @@
+{{define "New"}}
+  {{ template "Header" }}
+
+  <h2 class="col">New Book</h2>
+  <form method="POST" action="insert">
+    <div class="form-group">
+      <label for="exampleInputEmail1">ISBN</label>
+      <input type="text" class="form-control" name="ISBN" id="ISBN" aria-describedby="ISBN">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Title</label>
+      <input type="text" class="form-control" name="Title" id="Title">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Language</label>
+      <input type="text" class="form-control" name="Language" id="Language">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">MRP</label>
+      <input type="text" class="form-control" name="MRP" id="MRP">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Publisher</label>
+      <input type="text" class="form-control" name="Publisher" id="Publisher">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">PubDate</label>
+      <input type="text" class="form-control" name="PubDate" id="PubDate">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Book</button>
+  </form>
+
+
+  {{ template "Footer" }}
+{{end}}

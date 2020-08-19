@@ -1,0 +1,27 @@
+{{define "Show"}}
+  {{ template "Header" }}
+    <h2 class="col"> Manager Author </h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">Edit</th>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        <td scope="row">{{ .ID }}</td>
+        <td> {{ .ISBN }} </td>
+        <td>
+          <a href="/admin/library/show?id={{ .ID }}">View</a>
+          <a href="/admin/library/edit?id={{ .ID }}">Edit</a>
+          <a href="/admin/library/delete?id={{ .ID }}">Delete</a>
+        </td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{end}}

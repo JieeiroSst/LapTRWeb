@@ -1,0 +1,36 @@
+{{define "Edit"}}
+  {{template "Header"}}
+
+  <h2 class="col">Edit Book</h2>
+
+  <form method="POST" action="update">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Title</label>
+      <input type="text" class="form-control" name="Title" id="Title" value="{{ .Title }}">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Language</label>
+      <input type="text" class="form-control" name="Language" id="Language" value="{{ .Language }}">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">MRP</label>
+      <input type="text" class="form-control" name="MRP" id="MRP" value="{{ .MRP }}">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Publisher</label>
+      <input type="text" class="form-control" name="Publisher" id="" value="{{ .Publisher }}">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">PubDate</label>
+      <input type="text" class="form-control" name="PubDate" id="PubDate" value="{{ .PubDate }}">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save book</button>
+  </form>
+
+  {{template "Footer"}}
+{{end}}

@@ -1,0 +1,32 @@
+{{define "Show"}}
+  {{ template "Header" }}
+    <h2 class="col"> Manager Author </h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">SellerId</th>
+        <th scope="col">BuyerId</th>
+        <th scope="col">Stype</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">Tid</th>
+        <th scope="col">Edit</th>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        <td scope="row">{{ .SellerId }}</td>
+        <td> {{ .BuyerId }} </td>
+        <td>{{ .Stype }} </td>
+        <td>{{ .ISBN }} </td>
+        <td>{{ .Tid }} </td>
+        <td>
+          <a href="/admin/buy-sell/edit?id={{ .SellerId }}">Edit</a>
+          <a href="/admin/buy-sell/delete?id={{ .SellerId }}">Delete</a>
+        </td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{end}}

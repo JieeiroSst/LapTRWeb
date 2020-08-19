@@ -1,0 +1,37 @@
+{{define "New"}}
+  {{ template "Header" }}
+
+  <h2 class="col">Create buy</h2>
+
+  <form method="POST" action="insert">
+    <div class="form-group">
+      <label for="exampleInputEmail1">SellerId</label>
+      <input type="text" class="form-control" name="SellerId" id="SellerId">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">BuyerId</label>
+      <input type="text" class="form-control" name="BuyerId" id="BuyerId">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Stype</label>
+      <input type="text" class="form-control" name="Stype" id="Stype">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">ISBN</label>
+      <input type="text" class="form-control" name="ISBN" id="ISBN">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Tid</label>
+      <input type="text" class="form-control" name="Tid" id="Tid">
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Save Buy</button>
+  </form>
+
+  {{ template "Footer" }}
+{{end}}

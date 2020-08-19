@@ -1,0 +1,31 @@
+{{define "List"}}
+  {{ template "Header" }}
+    <h2 class="col"> Manager profile </h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">UserID</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Address</th>
+        <th scope="col">Password</th>
+        <th scope="col">Edit</th>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        <td scope="row">{{ .UserID }}</td>
+        <td> {{ .UserName }} </td>
+        <td> {{ .Address }} </td>
+        <td> {{ .Password }} </td>
+        <td>
+          <a href="/admin/profile/show?id={{ .UserID }}">View</a>
+          <a href="/admin/profile/edit?id={{ .UserID }}">Edit</a>
+          <a href="/admin/profile/delete?id={{ .UserID }}">Delete</a>
+        </td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{end}}

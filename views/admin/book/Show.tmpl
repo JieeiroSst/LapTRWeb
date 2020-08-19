@@ -1,0 +1,38 @@
+{{define "Show"}}
+  {{ template "Header" }}
+
+    <h2 class="col"> Manager Book </h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">ISBN</th>
+        <th scope="col">Title</th>
+        <th scope="col">Language</th>
+        <th scope="col">MRP</th>
+        <th scope="col">Publisher</th>
+        <th scope="col">PubDate</th>
+        <th scope="col">Edit</th>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        <td scope="row">{{ .ISBN }}</td>
+        <td> {{ .Title }} </td>
+        <td>{{ .Language }} </td>
+        <td>{{ .MRP }} </td>
+        <td>{{ .Email }} </td>
+        <td>{{ .Publisher }} </td>
+        <td>{{ .PubDate }} </td>
+        <td>
+          <a href="/admin/book/edit?id={{ .ISBN }}">Edit</a>
+          <a href="/admin/book/delete?id={{ .ISBN }}">Delete</a>
+        </td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+
+  {{ template "Footer" }}
+
+{{end}}
