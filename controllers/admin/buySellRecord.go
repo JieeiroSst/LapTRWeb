@@ -9,7 +9,7 @@ import (
 
 func ShowListBuySell(w http.ResponseWriter, r *http.Request) {
 	res := model.ShowListBuySell()
-	tmpl.ExecuteTemplate(w, "Buy-Sell-list", res)
+	tmpl.ExecuteTemplate(w, "Buy-Sell-List", res)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }
