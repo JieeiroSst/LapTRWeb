@@ -9,7 +9,7 @@ import (
 
 func ShowListBook(w http.ResponseWriter, r *http.Request) {
 	res := model.ShowListBook()
-	tmpBook.ExecuteTemplate(w, "List", res)
+	tmpl.ExecuteTemplate(w, "List", res)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }
@@ -17,7 +17,7 @@ func ShowListBook(w http.ResponseWriter, r *http.Request) {
 func ShowSingleBook(w http.ResponseWriter, r *http.Request) {
 	nId, _ := strconv.Atoi(r.URL.Query().Get("ISBN"))
 	res := model.ShowSingleBook(nId)
-	tmpBook.ExecuteTemplate(w, "Show", res)
+	tmpl.ExecuteTemplate(w, "Show", res)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }
@@ -25,7 +25,7 @@ func ShowSingleBook(w http.ResponseWriter, r *http.Request) {
 func EditBook(w http.ResponseWriter, r *http.Request) {
 	nId, _ := strconv.Atoi(r.URL.Query().Get("ISBN"))
 	res := model.ShowSingleBook(nId)
-	tmpBook.ExecuteTemplate(w, "Edit", res)
+	tmpl.ExecuteTemplate(w, "Edit", res)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }
@@ -39,7 +39,7 @@ func DeleteBook(w http.ResponseWriter, r *http.Request) {
 }
 
 func CreateBook(w http.ResponseWriter, r *http.Request) {
-	tmpBook.ExecuteTemplate(w, "New", nil)
+	tmpl.ExecuteTemplate(w, "New", nil)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }

@@ -12,6 +12,9 @@ import (
 func main() {
 	route := mux.NewRouter()
 
+	files := http.FileServer(http.Dir("./public"))
+	route.Handle("/", files)
+
 	route.HandleFunc("/admin", admin.HomeAdmin)
 
 	route.HandleFunc("/admin/auth", admin.IndexAuthor)

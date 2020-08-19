@@ -9,7 +9,7 @@ import (
 
 func IndexAuthor(w http.ResponseWriter, r *http.Request) {
 	res := admin.ShowListAuthor()
-	tmplAuth.ExecuteTemplate(w, "List", res)
+	tmpl.ExecuteTemplate(w, "List", res)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }
@@ -17,13 +17,13 @@ func IndexAuthor(w http.ResponseWriter, r *http.Request) {
 func IndexSignleauthor(w http.ResponseWriter, r *http.Request) {
 	nId, _ := strconv.Atoi(r.URL.Query().Get("AuthId"))
 	res := admin.ShowSingleAuthor(nId)
-	tmplAuth.ExecuteTemplate(w, "Show", res)
+	tmpl.ExecuteTemplate(w, "Show", res)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }
 
 func NewAuthor(w http.ResponseWriter, r *http.Request) {
-	tmplAuth.ExecuteTemplate(w, "New", nil)
+	tmpl.ExecuteTemplate(w, "New", nil)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }
@@ -31,7 +31,7 @@ func NewAuthor(w http.ResponseWriter, r *http.Request) {
 func EditAuthor(w http.ResponseWriter, r *http.Request) {
 	Id, _ := strconv.Atoi(r.URL.Query().Get("AuthId"))
 	res := admin.ShowSingleAuthor(Id)
-	tmplAuth.ExecuteTemplate(w, "Edit", res)
+	tmpl.ExecuteTemplate(w, "Edit", res)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }
@@ -45,7 +45,7 @@ func DeleteAuth(w http.ResponseWriter, r *http.Request) {
 }
 
 func CreateAuth(w http.ResponseWriter, r *http.Request) {
-	tmplAuth.ExecuteTemplate(w, "New", nil)
+	tmpl.ExecuteTemplate(w, "New", nil)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }
