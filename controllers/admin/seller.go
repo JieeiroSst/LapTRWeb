@@ -9,14 +9,14 @@ import (
 
 func ShowListSeller(w http.ResponseWriter, r *http.Request) {
 	res := model.ShowListSell()
-	tmpl.ExecuteTemplate(w, "List", res)
+	tmpl.ExecuteTemplate(w, "Seller-List", res)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }
 
 func ShowSingleSeller(w http.ResponseWriter, r *http.Request) {
 	res := model.ShowListSell()
-	tmpl.ExecuteTemplate(w, "Show", res)
+	tmpl.ExecuteTemplate(w, "Seller-Show", res)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }

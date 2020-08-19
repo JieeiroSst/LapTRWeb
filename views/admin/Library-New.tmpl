@@ -1,12 +1,12 @@
-{{define "Edit"}}
+{{define "Library-New"}}
   {{ template "Header" }}
 
-  <h2 class="col">Edit library</h2>
+  <h2 class="col">Edit Author</h2>
 
-  <form method="POST" action="update">
+  <form method="POST" action="insert">
     <div class="form-group">
       <label for="exampleInputEmail1">ISBN</label>
-      <input type="text" class="form-control" name="ISBN" id="ISBN" value="{{ .ISBN }}">
+      <input type="text" class="form-control" name="ISBN" id="ISBN">
     </div>
 
     <button type="submit" class="btn btn-primary">Save library</button>

@@ -1,6 +1,7 @@
-{{define "List"}}
+{{define "Author-Show"}}
   {{ template "Header" }}
-    <h2 class="col"> Manager Author </h2>
+
+  <h2 class="col"> Manager Author </h2>
     <table class="table">
       <thead>
       <tr>
@@ -19,7 +20,6 @@
         <td>{{ .Affiation }} </td>
         <td>{{ .Email }} </td>
         <td>
-          <a href="/admin/auth/show?id={{ .AuthId }}">View</a>
           <a href="/admin/auth/edit?id={{ .AuthId }}">Edit</a>
           <a href="/admin/auth/delete?id={{ .AuthId }}">Delete</a>
         </td>
@@ -27,5 +27,6 @@
     {{ end }}
        </tbody>
     </table>
+
   {{ template "Footer" }}
 {{end}}

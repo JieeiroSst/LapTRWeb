@@ -1,32 +1,32 @@
-{{define "New"}}
+{{define "Buy-Sell-Edit"}}
   {{ template "Header" }}
 
-  <h2 class="col">Create buy</h2>
+  <h2 class="col">Edit buy-sell</h2>
 
-  <form method="POST" action="insert">
+  <form method="POST" action="update">
     <div class="form-group">
       <label for="exampleInputEmail1">SellerId</label>
-      <input type="text" class="form-control" name="SellerId" id="SellerId">
+      <input type="text" class="form-control" name="SellerId" id="SellerId" value="{{ .SellerId }}">
     </div>
 
     <div class="form-group">
       <label for="exampleInputPassword1">BuyerId</label>
-      <input type="text" class="form-control" name="BuyerId" id="BuyerId">
+      <input type="text" class="form-control" name="BuyerId" id="BuyerId" value="{{ .BuyerId }}">
     </div>
 
     <div class="form-group">
       <label for="exampleInputPassword1">Stype</label>
-      <input type="text" class="form-control" name="Stype" id="Stype">
+      <input type="text" class="form-control" name="Stype" id="Stype" value="{{ .Stype }}">
     </div>
 
     <div class="form-group">
       <label for="exampleInputPassword1">ISBN</label>
-      <input type="text" class="form-control" name="ISBN" id="ISBN">
+      <input type="text" class="form-control" name="ISBN" id="ISBN" value="{{ .ISBN }}">
     </div>
 
     <div class="form-group">
       <label for="exampleInputPassword1">Tid</label>
-      <input type="text" class="form-control" name="Tid" id="Tid">
+      <input type="text" class="form-control" name="Tid" id="Tid" value="{{ .Tid }}">
     </div>
 
 

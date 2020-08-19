@@ -1,4 +1,4 @@
-{{define "Show"}}
+{{define "Course-List"}}
   {{ template "Header" }}
     <h2 class="col"> Manager course </h2>
     <table class="table">
@@ -17,6 +17,7 @@
         <td> {{ .CourseName }} </td>
         <td>{{ .Department }} </td>
         <td>
+          <a href="/admin/course/show?id={{ .CourseId }}">View</a>
           <a href="/admin/course/edit?id={{ .CourseId }}">Edit</a>
           <a href="/admin/course/delete?id={{ .CourseId }}">Delete</a>
         </td>

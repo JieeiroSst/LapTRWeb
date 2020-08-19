@@ -9,7 +9,7 @@ import (
 
 func ShowListLibrary(w http.ResponseWriter, r *http.Request) {
 	res := model.ShowListLibrary()
-	tmpl.ExecuteTemplate(w, "List", res)
+	tmpl.ExecuteTemplate(w, "Library-List", res)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }
@@ -17,7 +17,7 @@ func ShowListLibrary(w http.ResponseWriter, r *http.Request) {
 func ShowSingleLibrary(w http.ResponseWriter, r *http.Request) {
 	Id, _ := strconv.Atoi(r.URL.Query().Get("Id"))
 	res := model.ShowSingleLibrary(Id)
-	tmpl.ExecuteTemplate(w, "Show", res)
+	tmpl.ExecuteTemplate(w, "Library-Show", res)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }
@@ -25,13 +25,13 @@ func ShowSingleLibrary(w http.ResponseWriter, r *http.Request) {
 func EditLibrary(w http.ResponseWriter, r *http.Request) {
 	Id, _ := strconv.Atoi(r.URL.Query().Get("Id"))
 	res := model.ShowSingleLibrary(Id)
-	tmpl.ExecuteTemplate(w, "Edit", res)
+	tmpl.ExecuteTemplate(w, "Library-Edit", res)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }
 
 func CreateLibrary(w http.ResponseWriter, r *http.Request) {
-	tmpl.ExecuteTemplate(w, "New", nil)
+	tmpl.ExecuteTemplate(w, "Library-New", nil)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }

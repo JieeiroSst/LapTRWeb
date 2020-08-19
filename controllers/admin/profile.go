@@ -9,7 +9,7 @@ import (
 
 func ShowListProfile(w http.ResponseWriter, r *http.Request) {
 	res := models.ShowListProfile()
-	tmpl.ExecuteTemplate(w, "List", res)
+	tmpl.ExecuteTemplate(w, "Profile-List", res)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }
@@ -17,7 +17,7 @@ func ShowListProfile(w http.ResponseWriter, r *http.Request) {
 func ShowSingleProfile(w http.ResponseWriter, r *http.Request) {
 	Id, _ := strconv.Atoi(r.URL.Query().Get("UserId"))
 	res := models.ShowSingleProfile(Id)
-	tmpl.ExecuteTemplate(w, "Show", res)
+	tmpl.ExecuteTemplate(w, "Profile-Show", res)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }
@@ -25,7 +25,7 @@ func ShowSingleProfile(w http.ResponseWriter, r *http.Request) {
 func EditProfile(w http.ResponseWriter, r *http.Request) {
 	Id, _ := strconv.Atoi(r.URL.Query().Get("UserId"))
 	res := models.ShowSingleProfile(Id)
-	tmpl.ExecuteTemplate(w, "Edit", res)
+	tmpl.ExecuteTemplate(w, "Profile-Edit", res)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }

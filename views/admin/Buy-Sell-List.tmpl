@@ -1,4 +1,4 @@
-{{define "Show"}}
+{{define "Buy-Sell-List"}}
   {{ template "Header" }}
     <h2 class="col"> Manager Author </h2>
     <table class="table">
@@ -21,6 +21,7 @@
         <td>{{ .ISBN }} </td>
         <td>{{ .Tid }} </td>
         <td>
+          <a href="/admin/buy-sell/show?id={{ .SellerId }}">View</a>
           <a href="/admin/buy-sell/edit?id={{ .SellerId }}">Edit</a>
           <a href="/admin/buy-sell/delete?id={{ .SellerId }}">Delete</a>
         </td>
