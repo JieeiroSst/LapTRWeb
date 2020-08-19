@@ -54,10 +54,10 @@ func InsertAuth(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		id, _ := strconv.Atoi(r.FormValue("AuthId"))
 		author := admin.Author{
-			AuthId:     id,
-			Name:       r.FormValue("Name"),
-			Affliation: r.FormValue("Affliation"),
-			Email:      r.FormValue("Email"),
+			AuthId:    id,
+			Name:      r.FormValue("Name"),
+			Affiation: r.FormValue("Affiation"),
+			Email:     r.FormValue("Email"),
 		}
 		admin.InsertAuthor(author)
 	}
@@ -70,10 +70,10 @@ func UpdateAuth(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		id, _ := strconv.Atoi(r.FormValue("AuthId"))
 		author := admin.Author{
-			AuthId:     id,
-			Name:       r.FormValue("Name"),
-			Affliation: r.FormValue("Affliation"),
-			Email:      r.FormValue("Email"),
+			AuthId:    id,
+			Name:      r.FormValue("Name"),
+			Affiation: r.FormValue("Affiation"),
+			Email:     r.FormValue("Email"),
 		}
 		admin.UpdateAuthor(author)
 	}

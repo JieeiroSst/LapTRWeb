@@ -5,10 +5,10 @@ import (
 )
 
 type Author struct {
-	AuthId     int    `json:"auth_id"`
-	Name       string `json:"name"`
-	Affliation string `json:"affliation"`
-	Email      string `json:"email"`
+	AuthId    int    `json:"auth_id"`
+	Name      string `json:"name"`
+	Affiation string `json:"Affiation"`
+	Email     string `json:"email"`
 }
 
 func ShowListAuthor() []Author {
@@ -23,15 +23,15 @@ func ShowListAuthor() []Author {
 
 	for seleDB.Next() {
 		var id int
-		var name, afflication, email string
+		var name, Affiation, email string
 
-		err = seleDB.Scan(&id, &name, &afflication, &email)
+		err = seleDB.Scan(&id, &name, &Affiation, &email)
 		if err != nil {
 			panic(err.Error())
 		}
 		author.AuthId = id
 		author.Name = name
-		author.Affliation = afflication
+		author.Affiation = Affiation
 		author.Email = email
 
 		res = append(res, author)
@@ -51,15 +51,15 @@ func ShowSingleAuthor(id int) Author {
 
 	for seleDB.Next() {
 		var id int
-		var name, afflication, email string
+		var name, Affiation, email string
 
-		err = seleDB.Scan(&id, &name, &afflication, &email)
+		err = seleDB.Scan(&id, &name, &Affiation, &email)
 		if err != nil {
 			panic(err.Error())
 		}
 		author.AuthId = id
 		author.Name = name
-		author.Affliation = afflication
+		author.Affiation = Affiation
 		author.Email = email
 	}
 	defer db.Close()
@@ -68,16 +68,16 @@ func ShowSingleAuthor(id int) Author {
 
 func InsertAuthor(a Author) {
 	db := db.DbConn()
-	insert, err := db.Prepare("insert into Author(AuthId,Name,Affliation,Email) values(?,?,?,?)")
+	insert, err := db.Prepare("insert into Author(AuthId,Name,Affiation,Email) values(?,?,?,?)")
 	if err != nil {
 		panic(err.Error())
 	}
 
 	authID := a.AuthId
 	name := a.Name
-	affliation := a.Affliation
+	Affiation := a.Affiation
 	email := a.Email
-	insert.Exec(authID, name, affliation, email)
+	insert.Exec(authID, name, Affiation, email)
 	defer db.Close()
 }
 
@@ -90,7 +90,7 @@ func UpdateAuthor(a Author) {
 
 	authID := a.AuthId
 	name := a.Name
-	affliation := a.Affliation
+	affliation := a.Affiation
 	email := a.Email
 	update.Exec(name, affliation, email, authID)
 	defer db.Close()
